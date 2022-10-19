@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { getPrismicClient } from '../../services/prismic';
 import styles from './style.module.scss';
 import { RichText } from 'prismic-dom';
-import Link from 'next/link'
+import Link from 'next/link';
 
 type Post = {
   slug: string;
@@ -26,13 +26,12 @@ export default function Post({ posts }: PostsProps) {
         <div className={styles.posts}>
           {posts.map((post) => (
             <Link href={`/posts/${post.slug}`} key={post.slug}>
-              <a >
+              <a>
                 <time>{post.updatedAt}</time>
                 <strong>{post.title}</strong>
                 <p>{post.excerpt}</p>
               </a>
             </Link>
-
           ))}
         </div>
       </main>
